@@ -1,4 +1,4 @@
-package com.example.ajax;
+package com.example.ajax.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.ajax.service.HttpRe;
@@ -6,12 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.example.ajax.HttpClin.postForAPP;
+import static com.example.ajax.service.HttpRe.postForAPP;
 
 @RestController
 public class HtmCo {
@@ -28,9 +26,7 @@ public class HtmCo {
         String data = null;
         try {
              data=  postForAPP("http://localhost:5005/login", param, headers);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         }
         return data;

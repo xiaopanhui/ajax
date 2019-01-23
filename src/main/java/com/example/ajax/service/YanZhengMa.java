@@ -1,4 +1,4 @@
-package com.example.ajax;
+package com.example.ajax.service;
 
 
 import net.sourceforge.tess4j.ITesseract;
@@ -9,7 +9,6 @@ import net.sourceforge.tess4j.util.ImageHelper;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 
 public class YanZhengMa {

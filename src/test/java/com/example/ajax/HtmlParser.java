@@ -177,27 +177,27 @@ public class HtmlParser {
     }
 
     public static void main(String[] args) throws IOException {
-//        String url = "http://mil.news.sina.com.cn/roll/index.d.html?cid=57918&tdsourcetag=s_pctim_aiomsg&qq-pf-to=pcqq.group";
-//        String filename = paseHtml(url);
-//        Document doc = Jsoup.parse(readHtml( filename));
-//        Elements links = doc.select("a[href]"); //带有href属性的a元素
-//        Elements elements = doc.select(".fixList").select(".linkNews").select("li");
-//        //扩展名为.png的图片
-//        Elements pngs = doc.select("img[src$=.png]");
-//        Element masthead = doc.select("div.masthead").first();
-//        String data = "";
-//        StringBuffer sb1 = new StringBuffer();
-//        for (Element e : elements) {
-//            data=sb1.append(e.text()).toString();
-//
-//        }
+        String url = "http://mil.news.sina.com.cn/roll/index.d.html?cid=57918&tdsourcetag=s_pctim_aiomsg&qq-pf-to=pcqq.group";
+        String filename = paseHtml(url);
+        Document doc = Jsoup.parse(readHtml( filename));
+        Elements links = doc.select("a[href]"); //带有href属性的a元素
+        Elements elements = doc.select(".fixList").select(".linkNews").select("li");
+        //扩展名为.png的图片
+        Elements pngs = doc.select("img[src$=.png]");
+        Element masthead = doc.select("div.masthead").first();
+        String data = "";
+        StringBuffer sb1 = new StringBuffer();
+        for (Element e : elements) {
+            data=sb1.append(e.text()).toString();
 
-//        Map<String, String> map = new HashMap<>();
-//        map.put("data",data);
-//        JSONObject jsonObject = JSONObject.fromObject(map);
-////        //3、将json对象转化为json字符串
-//        String result = jsonObject.toString();
-////        System.out.println( result );
+        }
+
+        Map<String, String> map = new HashMap<>();
+        map.put("data",data);
+        JSONObject jsonObject = JSONObject.fromObject(map);
+//        //3、将json对象转化为json字符串
+        String result = jsonObject.toString();
+//        System.out.println( result );
 
 
         Document doc2 = Jsoup.parse(readHtml("./rtnerror.html"));
@@ -206,7 +206,7 @@ public class HtmlParser {
         Element table = doc2.select("table").get(25);
         StringBuffer sb = new StringBuffer();
 
-        Map<String,String> map1=new HashMap<>();
+        Map<String,String> mapx=new HashMap<>();
         String detail="";
         List<List<String>> list = getTables(table);
         for (List<String> list2 : list) {
@@ -221,10 +221,10 @@ public class HtmlParser {
                int num= detail.split("llll").length;
 //                System.out.println("detail***********====="+detail.split("llll")[num-1]);
                 //得出每一个的序号下标
-                map1.put(s[s.length-27-1],detail.split("llll")[num-1]);
-               String o= map1.get("llll4");
+                mapx.put(s[s.length-27-1],detail.split("llll")[num-1]);
+               String o= mapx.get("llll4");
                 System.out.println("data"+o);
-                JSONObject jsonObject1 = JSONObject.fromObject( map1);
+                JSONObject jsonObject1 = JSONObject.fromObject( mapx);
                 //3、将json对象转化为json字符串
                 String resultx = jsonObject1.toString();
               System.out.println("result=============="+resultx);

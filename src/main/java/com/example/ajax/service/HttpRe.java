@@ -1,4 +1,4 @@
-package com.example.ajax;
+package com.example.ajax.service;
 
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
