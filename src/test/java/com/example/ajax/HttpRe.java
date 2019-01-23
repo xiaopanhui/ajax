@@ -2,6 +2,7 @@ package com.example.ajax;
 
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -10,18 +11,17 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-
+@Service
 public class HttpRe {
     protected static Logger logger = LoggerFactory.getLogger(HttpRe.class);
     //请求超时时间,这个时间定义了socket读数据的超时时间，
@@ -30,16 +30,17 @@ public class HttpRe {
     //连接超时时间,这个时间定义了通过网络与服务器建立连接的超时时间，也就是取得了连接池中的某个连接之后到接通目标url的连接等待时间。发生超时，会抛出ConnectionTimeoutException异常
     private static final int CONNECT_TIME_OUT = 60000;
 
-//    private static List<NameValuePair> createParam(Map<String, Object> param) {
-//        //建立一个NameValuePair数组，用于存储欲传送的参数
-//        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-//        if(param != null) {
-//            for(String k : param.keySet()) {
-//                nvps.add(new BasicNameValuePair(k, param.get(k).toString()));
-//            }
-//        }
-//        return nvps;
-//    }
+    private static List<NameValuePair> createParam(Map<String, Object> param) {
+        //建立一个NameValuePair数组，用于存储欲传送的参数
+        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+        if(param != null) {
+            for(String k : param.keySet()) {
+                NameValuePair nameValuePair=  new BasicNameValuePair(k, param.get(k).toString());
+                nvps.add(nameValuePair);
+            }
+        }
+        return nvps;
+    }
 
     /**
      * 发送  post 请求
@@ -57,6 +58,7 @@ public class HttpRe {
                 //建立Request的对象，一般用目标url来构造，Request一般配置addHeader、setEntity、setConfig
                 URIBuilder uriBuilder = new URIBuilder(url);
                 URI uri = uriBuilder.build();
+                System.out.println(uri);
                 HttpPost req = new HttpPost(uri);
                 if(param != null) {
                 //设置请求参数,中文 设置UTF-8
@@ -66,6 +68,8 @@ public class HttpRe {
                 Set<String> keys = headers.keySet();
                 for (String key : keys) {
                     req.setHeader(key, headers.get(key).toString());
+                    System.out.println(key);
+                    System.out.println(headers.get(key).toString());
                 }
                 //setConfig,添加配置,如设置请求超时时间,连接超时时间
                 RequestConfig reqConfig = RequestConfig.custom().setSocketTimeout(SOCKET_TIME_OUT).setConnectTimeout(CONNECT_TIME_OUT).build();
@@ -101,8 +105,7 @@ public class HttpRe {
      * @return
      */
     public static byte[] getImage( String url) {
-        //目前HttpClient最新版的实现类为CloseableHttpClient
-//         url="http://www.baidu.com";
+
         CloseableHttpClient client = HttpClients.createDefault();
         CloseableHttpResponse response = null;
 
@@ -156,5 +159,6 @@ public class HttpRe {
         headers.put("Accept","application/json;charset=UTF-8");
         postForAPP("http://localhost:5005/login", param, headers);
     }
+
 
 }

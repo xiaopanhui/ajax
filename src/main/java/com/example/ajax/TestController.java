@@ -1,16 +1,13 @@
 package com.example.ajax;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TestController {
 
     @PostMapping ("/test1")
-    public Response test1(Integer id,String name){
+    public Response test1(String value){
 
-        return ResponseUtil.success(name);
+        return ResponseUtil.success(value);
     }
 }

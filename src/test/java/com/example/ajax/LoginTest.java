@@ -10,7 +10,7 @@ public class LoginTest {
     public static void main(String[] args) {
 //        System.out.println(yanzheng());
 //        login();
-//        yan();
+        yan();
 
     }
 
@@ -22,14 +22,13 @@ public class LoginTest {
         return yanZhengMa.yanzhengma(httpRe.getImage(url));
     }
 
-//    public static String yan() {
-//
-//        YanZhengMa2 yanZhengMa = new YanZhengMa2();
-//
-//        String url = "";
-//        HttpRe httpRe = new HttpRe();
-//        return yanZhengMa.yanzhengma(httpRe.getImage(url));
-//    }
+    public static String yan() {
+
+        YanZhengMa2 yanZhengMa = new YanZhengMa2();
+            String a=yanZhengMa.yanzhengma();
+            System.out.println("a"+a);
+        return a;
+    }
 
     public static String login() {
         String url = "https://www.tianyancha.com/cd/login.json";

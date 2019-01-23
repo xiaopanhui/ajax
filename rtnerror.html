@@ -1,0 +1,405 @@
+<head runat=\"server\">\r\n
+	<base target=\"_self\" />\r\n</head>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<html XMLNS:IE>
+	<head>
+		<base href=\"http://10.169.8.210:9109/gysi2/yhsi2/insurance/query/employerInsuranceEmployee.jsp\"> <meta http-equiv=\"Content-Type\"
+		 content=\"text/html;charset=GBK\"> <META HTTP-EQUIV=Pragma CONTENT=no-cache>
+		<META HTTP-EQUIV=Expires CONTENT=\"-1\">
+		<style>v\\:* {behavior:url(#default#VML);}\no\\:* {behavior:url(#default#VML);}\nw\\:* {behavior:url(#default#VML);}\n.shape {behavior:url(#default#VML);}\n@media all {IE\\:clientCaps {behavior:url(#default#clientCaps)}}</style>
+		<title>银海</title>
+	</head>
+	<body onload=\"if('function'==typeof(fnAddOnload))fnAddOnload();\">
+		<IE:clientCaps ID=\"oClientCaps\" />
+		<link rel=\"stylesheet\" href='/gysi2/resource/style/default.css' type=\"text/css\"> <script>var
+		imgsrc=\"/gysi2/resource/images/\",g_curBusinessId = 'P01180307',g_sessionId=
+		\".do;jsessionid=6PT8b0MVvq5dw1Zr6D10RzHp9pj3LmllYJWLS3fGLHQZyMjKv1W5!1101558648!1542769749262\";var
+		g_szSPKey=\"^\",g_szSPValue=\"`\";var scriptsrc=\"/gysi2/resource/javascript/\";var g_szCurRq = \"2018-11-21
+		11:13:23\" ;var langue=\"zh\"; var contextPath=\"/gysi2\";</script>
+		<script language=\"Javascript\" src=\"/gysi2/resource/javascript/js.js\"> </script> <script language=\"Javascript\"
+		 src=\"/gysi2/resource/javascript/CnPy.js\"> </script> <script language=\"Javascript\" src=\"/gysi2/resource/javascript/meizzDate.js\">
+		 </script> <script language=\"Javascript\" src=\"/gysi2/resource/javascript/serviceValidator.js\"> </script> <script
+		 language=\"Javascript\" src=\"/gysi2/resource/javascript/xtree.js\"> </script> <div id=clctfltstid style=\"font-size:9pt;Filter:progid:DXImageTransform.Microsoft.Shadow(Color=#CCCCCC,offX=15,offY=10,direction=120,Strength=5);width:360px;border:1px
+		 solid
+		 buttonface;overflow:visible;position:absolute;z-index:9999;height:120;background-Color:lightyellow;display:none;left=-8883;top:-9870\"><nobr>已有过滤条件：<select class=LABEL2 id=yyFltLsts name=yyFltLsts></select><input type=button accessKey=d value='删除[d]' class=button id=delflt>&nbsp;<input accessKey=a id=delallflt type=button value='全清除[a]' class=button></nobr><p><fieldset style=\"width:100%;\"><input type=hidden id=fltFldName><legend>当前设置：<span style='color:red' id=fltlable></span></legend><nobr>过滤值：<input TITLE=\"支持通配符号:*\" type=text id=fltvl class=LABEL2></nobr><nobr>过滤运算符号：<select id=fltys class=LABEL2><option value=\"=\" selected>等于</option><option value=\"<>\">不等于</option><option value=\">\">大于</option><option value=\">=\">大于等于</option><option value=\"<\">小于</option><option value=\"<=\">小于等于</option></select></nobr><nobr>组合过滤逻辑：<select id=fltlj class=LABEL2><option value=\"&\" selected>并且(与)</option><option value=\"|\">或者</option></select></nobr><p><center><input type=button accessKey=x id=doClctFlt value='执行过滤[x]' class=button></center></fieldset></div><iframe name=myrstifm src='about:blank' id=myrstifm style='width:0;height:0;display:none'></iframe><script language=\"Javascript\" src=\"/gysi2/resource/javascript/yhsi2.js\"></script>
+		<table cellspacing=\"0\" cellpadding=\"10\" width=\"100%\" align=\"center\" border=\"0\">
+			<tr>
+				<td align=\"center\">\r\n\r\n<script language=\"javascript\" type=\"text/javascript\">\r\n\t/***\r\n\t *
+					 传入分页reqcode\r\n\t fnAddOnload(\"fn_QueryOnePageSize(reqcode);\");\r\n\t
+					 fnAddOnload(\"fun_exportLimit('10000')\");\r\n\t */\r\n\tfnAddOnload(\"fn_QueryOnePageSizeAddReqcode('subQuery')\");\r\n\t\r\n//读取身份证\r\nfunction
+					 fetchID(){ \r\n var value1=ID.Read(1001,1001);\r\n var aac002=ID.GetSFZ;\r\n var aac003=ID.GetName;\r\n var
+					 aac006=ID.GetCSRQ;\r\n if(value1==-1001){\r\n\t\t alert(\"读卡器没连接!\");\r\n\t\t return false;\r\n\t\t }else
+					 if(value1==-2001){\r\n\t\t alert(\"认证失败!\"+sErr);\r\n\t\t return false;\r\n\t\t }\r\n\t\t else if(value1==-3001){\r\n\t\t
+					 alert(\"读身份证失败,可能的原因，身份证未放读卡器上!\");\r\n\t\t return false;\r\n\t\t }\r\n\t\t else if(value1==-4001){\r\n\t\t
+					 alert(\"读身证信息失败，可能的原因：1, COM目录没有创建文件的权限!\");\r\n\t\t return false;\r\n\t\t }\r\n\t$('dto(q_aac002)').value=\"1\";
+					 \r\n\tvar setValue=$('dto(q_aac002)');\r\n setValue.value=aac002;\r\n
+					 if(checkPersonIdandgetValue($('dto(q_aac002)'),'0')){\r\n document.getElementsByName('reqCode')[0].value='subQuery'
+					 ;\r\n \t fsubmit(document.forms[0]); \r\n }else{\r\n\t$('dto(q_aac002)').focus();\r\n\treturn false;\r\n }\r\n
+					 \r\n} \r\n</script>\r\n <form name=\"simpleFrameQueryReportForm\" method=\"POST\" action=\"/gysi2/yhsi2/insurance/query/employerInsuranceEmployeeAction.do\"
+					 class=\"FORM\"><table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" width=\"100%\" class=\"FORM\"><tr><td valign=\"top\">
+					 <table cellspacing=\"1\" cellpadding=\"1\" border=\"0\" width=\"100%\">\n<input type=\"hidden\" name=\"reqCode\" value=\"init\">\n<tr><th class=FORM>参保征集->查询->个人参保信息查询->个人医疗参保信息查询</th></tr><tr><td class=FORM>
+					 <table width=\"100%\" align=\"center\"\tborder=0>\n\r\n\t<tr><td colspan=\"2\"><fieldset style=\"font-size:13px\">\n<legend align=\"left\">查询条件</legend>\n
+					 <table width=\"100%\">\r\n\t\t<tr><td colspan=\"2\">
+					 <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"><tr>\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_yab003_1)_label\">分中心：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap>
+					 <table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_yab003_1)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_yab003_1\" data=\"0101,市本级分中心|0102,白云分中心|0103,乌当分中心|0104,花溪分中心（小河）|0105,花溪分中心|0106,云岩分中心|0107,南明分中心|0108,开阳分中心|0109,息烽分中心|0110,观山湖分中心|0111,清镇分中心|0112,修文分中心|9999,综合管理机构|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"YAB003\" id=\"dto_q_yab003_1desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_yab003_1desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_yab003_1)\" value=\"\" id=\"dto_q_yab003_1\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aab001)_label\">单位编号：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aab001)\" maxlength=\"8\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABEL\" title=\"单位编号\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aab004)_label\">单位名称：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aab004)\" maxlength=\"100\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABEL\" title=\"单位名称\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac001)_label\">个人编号：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aac001)\" maxlength=\"10\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" onpropertychange=\"return fnOnProperChg(this,1,[10,0,9999999999,0])\" class=\"LABEL\" title=\"个人编号\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_yac005)_label\">IC卡编号：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_yac005)\" maxlength=\"9\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABEL\" title=\"IC卡编号\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac003)_label\">姓名：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aac003)\" maxlength=\"100\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABEL\" title=\"姓名\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac004)_label\">性别：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap>
+					 <table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac004)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac004\" data=\"1,男|2,女|9,无|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC004\" id=\"dto_q_aac004desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac004desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac004)\" value=\"\" id=\"dto_q_aac004\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac005)_label\">民族：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap>
+					 <table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac005)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac005\" data=\"01,汉族|02,苗族|03,瑶族|04,土家族|05,高山族|06,藏族|07,门巴族|08,维吾尔族|09,回族|10,满族|11,侗族|12,傣族|13,哈尼族|14,布朗族|15,基诺族|16,拉枯族|17,蒙古族|18,彝族|19,壮族|20,布依族|21,朝鲜族|22,白族|23,哈萨克族|24,黎族|25,傈僳族|26,佤族|27,畲族|28,水族|29,东乡族|30,纳西族|31,景颇族|32,柯尔克孜族|33,土族|34,达斡尔族|35,仫佬族|36,羌族|37,撒拉族|38,毛难族|39,仡佬族|40,锡伯族|41,阿昌族|42,普米族|43,塔吉克族|44,怒族|45,乌孜别克族|46,俄罗斯族|47,鄂温克族|48,崩龙族|49,保安族|50,裕固族|51,京族|52,塔塔尔族|53,独龙族|54,鄂伦春族|55,赫哲族|56,珞巴族|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC005\" id=\"dto_q_aac005desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac005desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac005)\" value=\"\" id=\"dto_q_aac005\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac002)_label\">身份证号码：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aac002)\" maxlength=\"18\" value=\"520181199008261755\" onchange=\"return checkPersonIdandgetValue(this,$('dto(aac006)'),$('descdto(aac004)'),'0')\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABEL\" title=\"身份证号码(证件号码)\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aae140)_label\">参保险种：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap>
+					 <table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aae140)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aae140\" data=\"01,基本养老保险|02,失业保险|03,基本医疗保险|04,工伤保险|05,生育保险|06,机关事业养老保险|07,大额救助医疗保险|08,补充医疗保险|09,医疗注入资金|10,居民养老保险|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAE140\" id=\"dto_q_aae140desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aae140desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aae140)\" value=\"\" id=\"dto_q_aae140\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac008)_label\">人员状态：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap>
+					 <table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac008)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac008\" data=\"1,在职|2,退休|3,死亡(失踪)|5,转出终止|6,退保终止|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC008\" id=\"dto_q_aac008desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac008desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac008)\" value=\"\" id=\"dto_q_aac008\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac012)_label\">个人身份：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap>
+					 <table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac012)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac012\" data=\"1,干部|2,工人|3,灵活就业人员|4,实习生|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC012\" id=\"dto_q_aac012desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac012desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac012)\" value=\"\" id=\"dto_q_aac012\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aae006)_label\">联系地址：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aae006)\" maxlength=\"100\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABEL\" title=\"联系地址\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac030_1)_label\">起始参保时间：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aac030_1)\" maxlength=\"10\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" onpropertychange=\"return fnOnProperChg(this,2)\" class=\"LABEL\" title=\"起始参保时间\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac030_2)_label\">终止参保时间：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aac030_2)\" maxlength=\"10\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" onpropertychange=\"return fnOnProperChg(this,2)\" class=\"LABEL\" title=\"终止参保时间\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac007)_label\">参加工作时间：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(q_aac007)\" maxlength=\"10\" value=\"\" onfocus=\"fnTabIt1()\" isRequired=\"false\" onpropertychange=\"return fnOnProperChg(this,2)\" class=\"LABEL\" title=\"参加工作时间\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac013)_label\">用工形式：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac013)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac013\" data=\"1,原固定职工|2,城镇合同制职工|3,农民合同制工人|4,临时工|5,农民工失业缴纳个人部份|6,实习生|9,其他用工形式|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC013\" id=\"dto_q_aac013desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac013desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac013)\" value=\"\" id=\"dto_q_aac013\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_yac167)_label\">所占编制：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_yac167)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_yac167\" data=\"0,其他|01,行政编制|02,参公事业编制|04,全额拨款事业编制|05,差额拨款事业编制|06,自收自支事业编制|07,工勤编制|08,计划内临时工|09,计划外临时工|10,无编制（退休人员）|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"YAC167\" id=\"dto_q_yac167desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_yac167desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_yac167)\" value=\"\" id=\"dto_q_yac167\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac020)_label\">行政级别：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac020)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac020\" data=\"030,部长级|033,相当部长级|040,副部长级|043,相当副部长级|050,司局级|051,巡视员|053,相当司局级|060,副司局级|061,助理巡视员|063,相当副司局级|070,处级|071,调研员|073,相当处级|080,副处级|081,助理调研员|083,相当副处级|090,科级|093,相当科级|100,副科级|103,相当副科级|110,科员级|120,办事员级|190,无行政职务级别|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC020\" id=\"dto_q_aac020desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac020desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac020)\" value=\"\" id=\"dto_q_aac020\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac014)_label\">技术职称：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac014)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac014\" data=\"1,正高级技术职务|10,特级教师(享受正高待遇)|2,副高级技术职务|3,中级技术职务|4,初级技术职务|9,无技术职务|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC014\" id=\"dto_q_aac014desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac014desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac014)\" value=\"\" id=\"dto_q_aac014\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_aac031)_label\">个人参保状态：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_aac031)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_aac031\" data=\"0,未参保|1,参保缴费|2,暂停缴费|3,终止参保|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"AAC031\" id=\"dto_q_aac031desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_aac031desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_aac031)\" value=\"\" id=\"dto_q_aac031\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_yac168)_label\">是否农民工标志：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_yac168)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_yac168\" data=\"0,不是农民工|1,农民工|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"YAC168\" id=\"dto_q_yac168desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_yac168desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_yac168)\" value=\"\" id=\"dto_q_yac168\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_yic071)_label\">劳模标志：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_yic071)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_yic071\" data=\"0,非劳模|1,劳模|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"YIC071\" id=\"dto_q_yic071desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_yic071desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_yic071)\" value=\"\" id=\"dto_q_yic071\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_yac067)_label\">人员进系统方式：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_yac067)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_yac067\" data=\"0,旧系统转入|1,手工录入|2,批量导入|9,其它方式进入|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"YAC067\" id=\"dto_q_yac067desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_yac067desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_yac067)\" value=\"\" id=\"dto_q_yac067\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t</tr><tr><th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(q_yab275)_label\">社保保险执行办法：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_yab275)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_yab275\" data=\"1,企业职工基本医疗保险|2,机关职工基本医疗保险|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"YAB275\" id=\"dto_q_yab275desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_yab275desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_yab275)\" value=\"\" id=\"dto_q_yab275\"></td><td width=\"1%\">&nbsp</td>\n\r\n            <th class=\"LABEL\" style=\"width:12%\"><span class=\"LABEL\" id=\"dto(q_yac020)_label\">84号文补收标志：</span></th><td class=\"LABEL\" style=\"width:11%\" nowrap><table style='border:1px gray solid' width=100% border=0 cellspacing=0 cellpadding=0><tr><td><input type=\"text\" name=\"descdto(q_yac020)\" value=\"\" showMode2=\"1\" codeFieldId=\"dto_q_yac020\" data=\"0,不是84号文补收|1,是84号文补收|\" onfocus=\"fnTabIt1()\" style=\"border:0px\" isRequired=\"false\" showMode=\"1\" collection=\"q_yac020\" id=\"dto_q_yac020desc\" style=\"behavior:url(/gysi2/resource/javascript/slct.htc);\" class=\"LABEL\"></td><td style='width:13px' onclick=\"dto_q_yac020desc.click()\"><span style=\"overflow:hidden;cursor:default;font-family:webdings;font-size:18px;color:#483D8B;text-align:center;\">6</span></td></tr></table><input type=\"hidden\" name=\"dto(q_yac020)\" value=\"\" id=\"dto_q_yac020\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\r\n\t\t\t<input type=\"hidden\" name=\"dto(p_xmlName)\" value=\"employerInsuranceEmployee\">\r\n\t\t\t<input type=\"hidden\" name=\"dto(p_keyID)\" value=\"\">\r\n\t\t\t<input type=\"hidden\" name=\"dto(p_queryID)\" value=\"Ac02ListGetCount;CountMap\">\r\n\t\t\t<input type=\"hidden\" name=\"dto(p_refresh)\" value=\"false\">\r\n\t\t\t<input type=\"hidden\" name=\"dto(p_viewID)\" value=\"jspView\">\r\n\t\t\t<input type=\"hidden\" name=\"dto(p_relation)\" value=\"q_aac001\">\r\n\t\t\t<!-- yangidngliang 20090702 屏蔽 layout:text styleTh=\"width:15%\" styleTd=\"width:15%\" property=\"dto(p_enableNull)\" tooltip=\"允许空条件\" key=\"允许空条件\" styleClass=\"LABEL\" size=\"25\" mode=\"H,H,H\" value=\"0\"  -->\r\n\t\t\t<input type=\"hidden\" name=\"dto(p_enableNull)\" value=\"1\">\r\n\t\t\t<!--<input type=\"hidden\" name=\"dto(p_pageSize)\" value=\"50\"> -->\r\n\t\t<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table></td></tr>\n\r\n\t</table></fieldset></td></tr>\n\r\n\t<tr><td align=\"center\" colspan=\"2\">\n\r\n\t\t<input type=\"button\" name=\"subQuery\" accesskey=\"R\" value=\"读身份证[R]\" onclick=\"this.form.elements['reqCode'].value='subQuery';fetchID();\" class=\"button\">\r\n\t    <input type=\"button\" name=\"query\" accesskey=\"Q\" value=\"查询[Q]\" onclick=\"this.form.elements['reqCode'].value='subQuery';if(1 > IsInput(document.getElementsByTagName('fieldset')[1]))return alert('请至少输入一个查询条件！');doSubmit(this);\" class=\"button\">\r\n\t\t<input type=\"button\" name=\"init\" value=\"重置[R]\" onclick=\"this.form.elements['reqCode'].value='init';fnMyReset(this);\" class=\"button\">\r\n\t</td></tr>\n\r\n\t\t<tr><td colspan=\"2\"><fieldset style=\"font-size:13px\">\n<legend align=\"left\">统计信息</legend>\n<table width=\"100%\">\r\n\t\t<tr><td colspan=\"2\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\"><tr>\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(value_1)_label\">人员汇总：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(value_1)\" maxlength=\"20\" value=\"1\" readonly=\"readonly\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABELRD\" title=\"人员汇总\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t\t<th class=\"LABEL\" style=\"width:15%\"><span class=\"LABEL\" id=\"dto(yac004_total)_label\">缴费基数：</span></th><td class=\"LABEL\" style=\"width:15%\" nowrap><input type=\"text\" name=\"dto(yac004_total)\" maxlength=\"20\" value=\"20182.35\" readonly=\"readonly\" onfocus=\"fnTabIt1()\" isRequired=\"false\" class=\"LABELRD\" title=\"缴费基数\"></td><td width=\"1%\">&nbsp</td>\n\r\n\t\t<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table></td></tr>\n\r\n\t</table></fieldset></td></tr>\n\r\n\t<tr><td colspan=\"2\"><fieldset style=\"font-size:13px\">\n<legend align=\"left\">单位参保人员信息</legend>\n<table width=\"100%\">\r\n\t\t<tr><td colspan=\"2\" valign=\"top\"><div style=\"width:700;word-break:keep-all;height:280;;overflow:auto;\" id=\"DIVAc02ListQueryResult\"><script>g_szDataGridId[g_szDataGridId.length]=\"Ac02ListQueryResult\";</script>
+					<table class=TABLEFORM oncontextmenu=\"return fnTableMenu(this)\" cellspacing=\"0\" cellpadding=\"0\" border=\"1\"
+					 width=\"100%\" id=\"Ac02ListQueryResult\">\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n
+						\r\n\t\t<tr oncontextmenu=\"event.cancelBubble=true,event.returnValue=false;return false\" ondblclick=\"var o=this.parentNode;while('TABLE'
+						 !=o.tagName)o=o.parentNode;fnDspQpTb(o)\" valign=\"top\" style=\"POSITION:relative;top:expression($p(this,'TABLE').parentNode.scrollTop
+						 - 1)\" style=\"cursor:pointer;cursor:hand;\">
+							<th width=\"1%\" class=\"TABLEFORM\" rowspan=1 nowrap>序号</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">单位编号</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">单位名称</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">个人编号</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">姓名</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">身份证号码(证件号码)</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">IC卡编号</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">险种类型</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">参保状态</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">人员状态</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">缴费工资</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">缴费基数</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">出生日期</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">参加工作日期</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">参保时间</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">个人身份</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">用工形式</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">所占编制</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">行政级别</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">技术职称</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">是否农民工标志</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">是否劳模标志</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">基本养老保险视同缴费年限</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">联系地址</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">邮政编码</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">企业内编号</th>
+							<th class=\"TABLEFORM\" width=\"15%\" align=\"center\">联系电话</th>
+						</tr>
+						<tr>\r\n\t\t\t<td class=\"TABLEFORM2\" style=\"text-align:center\" nowrap>1</td>
+							<td class=\"TABLEFORM2\" nowrap>10209903</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>贵阳块数据城市建设有限公司</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>3002689245</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>杨明</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>520181199008261755</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>A29867647</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>基本养老保险</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>参保缴费</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>在职</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>1990-08-26</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>工人</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>原固定职工</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>不是农民工</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>0</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>1</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>550001</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>13984830653</td>\r\n \r\n\t\t
+						</tr>
+						<tr>\r\n\t\t\t<td class=\"TABLEFORM\" style=\"text-align:center\" nowrap>2</td>
+							<td class=\"TABLEFORM\" nowrap>10209903</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>贵阳块数据城市建设有限公司</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>3002689245</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>杨明</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>520181199008261755</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>A29867647</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>失业保险</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>参保缴费</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>在职</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>1990-08-26</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>工人</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>原固定职工</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>不是农民工</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>0</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>1</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>550001</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>13984830653</td>\r\n
+							\r\n\t\t
+						</tr>
+						<tr>\r\n\t\t\t<td class=\"TABLEFORM2\" style=\"text-align:center\" nowrap>3</td>
+							<td class=\"TABLEFORM2\" nowrap>10209903</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>贵阳块数据城市建设有限公司</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>3002689245</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>杨明</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>520181199008261755</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>A29867647</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>基本医疗保险</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>参保缴费</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>在职</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>4303.27</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>1990-08-26</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>工人</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>原固定职工</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>不是农民工</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>0</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>1</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>550001</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>13984830653</td>\r\n \r\n\t\t
+						</tr>
+						<tr>\r\n\t\t\t<td class=\"TABLEFORM\" style=\"text-align:center\" nowrap>4</td>
+							<td class=\"TABLEFORM\" nowrap>10209903</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>贵阳块数据城市建设有限公司</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>3002689245</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>杨明</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>520181199008261755</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>A29867647</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>工伤保险</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>参保缴费</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>在职</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>1990-08-26</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>工人</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>原固定职工</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>不是农民工</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>0</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>1</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>550001</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>13984830653</td>\r\n
+							\r\n\t\t
+						</tr>
+						<tr>\r\n\t\t\t<td class=\"TABLEFORM2\" style=\"text-align:center\" nowrap>5</td>
+							<td class=\"TABLEFORM2\" nowrap>10209903</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>贵阳块数据城市建设有限公司</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>3002689245</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>杨明</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>520181199008261755</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>A29867647</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>生育保险</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>参保缴费</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>在职</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>3500</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>5379.08</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>1990-08-26</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>工人</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>原固定职工</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>不是农民工</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>0</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>1</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM2\" nowrap>550001</td>\r\n\t\t\t<td class=\"TABLEFORM2\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM2\"
+							 nowrap>13984830653</td>\r\n \r\n\t\t
+						</tr>
+						<tr>\r\n\t\t\t<td class=\"TABLEFORM\" style=\"text-align:center\" nowrap>6</td>
+							<td class=\"TABLEFORM\" nowrap>10209903</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>贵阳块数据城市建设有限公司</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>3002689245</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>杨明</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>520181199008261755</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>A29867647</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>大额救助医疗保险</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>参保缴费</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>在职</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>1990-08-26</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>2013-08-12</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>工人</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>原固定职工</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>不是农民工</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td
+							 class=\"TABLEFORM\" nowrap>0</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>1</td>\r\n\t\t\t<td class=\"TABLEFORM\"
+							 nowrap>550001</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>&nbsp;</td>\r\n\t\t\t<td class=\"TABLEFORM\" nowrap>13984830653</td>\r\n
+							\r\n\t\t
+						</tr>
+						<tr>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+						</tr>
+						<tr>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+						</tr>
+						<tr>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+						</tr>
+						<tr>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+						</tr>
+						<tr>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+							<td class=\"TABLEFORM2\"> &nbsp;</td>
+						</tr>
+						<tr>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+							<td class=\"TABLEFORM\"> &nbsp;</td>
+						</tr><input type=\"hidden\" name=\"com.yinhai.list.column.metadata\" value=\"aab001`单位编号^aab004`单位名称^aac001`个人编号^aac003`姓名^aac002`身份证号码(证件号码)^yac005`IC卡编号^aae140`险种类型^aac031`参保状态^aac008`人员状态^aac040`缴费工资^yac004`缴费基数^aac006`出生日期^aac007`参加工作日期^aac030`参保时间^aac012`个人身份^aac013`用工形式^yac167`所占编制^aac020`行政级别^aac014`技术职称^yac168`是否农民工标志^yic071`是否劳模标志^aic001`基本养老保险视同缴费年限^aae006`联系地址^aae007`邮政编码^yac002`企业内编号^aae005`联系电话\"><input
+						 type=\"hidden\" name=\"dtgrd.column.metadata\" value=\"aab001`单位编号^aab004`单位名称^aac001`个人编号^aac003`姓名^aac002`身份证号码(证件号码)^yac005`IC卡编号^aae140`险种类型^aac031`参保状态^aac008`人员状态^aac040`缴费工资^yac004`缴费基数^aac006`出生日期^aac007`参加工作日期^aac030`参保时间^aac012`个人身份^aac013`用工形式^yac167`所占编制^aac020`行政级别^aac014`技术职称^yac168`是否农民工标志^yic071`是否劳模标志^aic001`基本养老保险视同缴费年限^aae006`联系地址^aae007`邮政编码^yac002`企业内编号^aae005`联系电话\">
+					</table>
+					</div>
+				</td>
+			</tr>\n\r\n\t\t<script>fnAddOnload(\"fnSetObjVl('dto(totalFlag)','true');\"),g_arrPageRecord[g_arrPageRecord.length]='IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuery';function funmyFySubmitsimpleFrameQueryReportFormpageListsubQuery(){try{fnSetObjVl('domainName','Ac02ListQueryResult');fnSetObjVl('curPageListProperty','pageList');var oExp = $I('IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuerydc'); fnSetObjVl('_exportType',null == oExp ? '' : oExp.value);var skipNum = $I('txtmyFySubmitsimpleFrameQueryReportFormpageListsubQuery').value;if('' == skipNum)return ($I('txtmyFySubmitsimpleFrameQueryReportFormpageListsubQuery').focus(),alert('请填写要跳转的页数'));var skipUrl = 'employerInsuranceEmployeeAction.do?reqCode=subQuery&nextPage=' + skipNum;var totalNum = 1;if(skipNum>totalNum) {alert('输入页码大于总页码数。请确认！');return false;}fnSetObjVl('dto(totalFlag)','true');fnSetObjVl('reqCode','subQuery');fnSetObjVl('pageRecord',$I('IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuery').value);fnSetObjVl('search','subQuery');var o = document.forms[0];o.action = skipUrl;$('reqCode').removeNode(true);document.forms[0].submit();return true;}catch(e){}}</script>
+			<tr>
+				<td>
+					<table width=100%>
+						<tr align=right style=\"font-size:12px\">
+							<td nowrap style='text-align:right' class=LABEL>每页记录数：</td>
+							<td class=LABEL><input style='width:35px' onpropertychange=\"return fnOnProperChg(event.srcElement, 1, [7,0,
+								 5000, 1]);\" onkeydown=\"if('undefined' !=typeof this.oldvl && 13==event.keyCode && this.oldvl !=this.value)event.cancelBubble=true,event.returnValue=false,this.oldvl=null,this.removeAttribute('oldvl'),this.onchange();this.oldvl=null,this.removeAttribute('oldvl')\"
+								 onblur=\"this.oldvl=null,this.removeAttribute('oldvl')\" onfocus='this.oldvl = this.value' onchange=\"event.cancelBubble=true,event.returnValue=false;if(0
+								 < this.value.length)return myFySubmitsimpleFrameQueryReportFormpageListsubQuery(1)\" class=\"LABEL\" type=text
+								 id='IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuery' size=4 value=50 maxlength=8></td>
+							<td nowrap class=LABEL>共6条记录&nbsp;&nbsp;当前第1页&nbsp;&nbsp;共1页&nbsp;&nbsp;<script>function myFySubmitsimpleFrameQueryReportFormpageListsubQuery(n){try{fnSetObjVl('domainName','Ac02ListQueryResult');fnSetObjVl('curPageListProperty','pageList');var oExp = $I('IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuerydc'); fnSetObjVl('_exportType',null == oExp ? '' : oExp.value);fnSetObjVl('reqCode','subQuery');fnSetObjVl('pageRecord',$I('IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuery').value);fnSetObjVl('dto(totalFlag)','true');fnSetObjVl('nextPage', '1');fnSetObjVl('nextPage', n);fnSetObjVl('search','subQuery');document.forms[0].submit(document.forms[0])}catch(e){}}</script>
+							</td>
+							<td width=100 class=LABEL><input type=button class=button value='首  页'></td>
+							<td width=100 class=LABEL><input type=button class=button value=前一页></td>
+							<td width=100 class=LABEL><input type=button class=button value=后一页></td>
+							<td class=LABEL><select style='width:50px' class=LABEL id='IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuerydc'>
+									<option value=\"1\">TXT</option>
+									<option value=\"2\">Excel</option>
+								</select></td>
+							<td nowrap class=LABEL><input onclick=\"var o=document.forms[0];fnSetObjVl('domainName','Ac02ListQueryResult');fnSetObjVl('curPageListProperty','pageList');var
+								 oExp=$I('IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuerydc'); fnSetObjVl('_exportType',null==oExp ? ''
+								 : oExp.value);fnSetObjVl('nextPage', '1' );o.elements['reqCode'].value='saveCurrentPage' ;o.target='myrstifm'
+								 ;fnSetObjVl('dto(totalFlag)','true');fnSetObjVl('search','subQuery');o.submit();o.target='' ;\" class=button
+								 type=button value=导出当前页></td>
+							<td class=LABEL><input onclick=\"var o=document.forms[0];fnSetObjVl('domainName','Ac02ListQueryResult');fnSetObjVl('curPageListProperty','pageList');var
+								 oExp=$I('IDmyFySubmitsimpleFrameQueryReportFormpageListsubQuerydc'); fnSetObjVl('_exportType',null==oExp ? ''
+								 : oExp.value);fnSetObjVl('nextPage', '1' );o.elements['reqCode'].value='saveAllPage'
+								 ;fnSetObjVl('dto(totalFlag)','true');fnSetObjVl('search','subQuery');o.target='myrstifm' ;o.submit();o.target=''
+								 ;\" class=button type=button value=导出全部></td>
+							<td width=90 class=LABEL><input class=LABEL type=text onpropertychange=\"fnOnProperChg(this, 1, [12,2])\" id=txtmyFySubmitsimpleFrameQueryReportFormpageListsubQuery
+								 size=3 maxlength=6 disabled>\r\n</td>
+							<td width=90 class=LABEL><input type=button class=LABEL onclick='funmyFySubmitsimpleFrameQueryReportFormpageListsubQuery();'
+								 value='Go' disabled>
+						</tr>
+					</table>\r\n\t
+		</table>
+		</fieldset>
+		</td>
+		</tr>\n\r\n\t<tr>
+			<td align=\"center\" colspan=\"2\">\n\r\n\t\t
+				<!--\r\n把需要作数据有效检查的按钮的onclick里加入这样的代码:\r\nonclick=\"isSubmit=true;if(validateForm(this.form))submit();\"\r\n-->\r\n\r\n\t</td>
+		</tr>\n\r\n<tr>
+			<td colspan=\"2\">&nbsp;</td>
+		</tr>\n</table>
+		</td>
+		</tr>\n</table>
+		</td>
+		</tr>
+		</table>\n<input type=hidden name=jsessionid value=\"6PT8b0MVvq5dw1Zr6D10RzHp9pj3LmllYJWLS3fGLHQZyMjKv1W5!1101558648!1542769749262\"></form>\n<script
+		 type=\"text/javascript\" language=\"JavaScript\">\n<!--\ntry{var focusControl = document.forms[\"simpleFrameQueryReportForm\"].elements[\"dto(q_aac001)\"];  if (null != focusControl && \"object\" == typeof(focusControl) && focusControl.type != \"hidden\" && !focusControl.disabled)focusControl.focus(),focusControl.scrollIntoView();else {focusControl = document.forms[\"simpleFrameQueryReportForm\"].elements[\"descdto(q_aac001)\"];if(focusControl)focusControl.focus(),focusControl.scrollIntoView();}}catch(e){}\n  // -->\n</script>\n\r\n<script
+		 language=\"javascript\" type=\"text/javascript\">\r\n//拼凑经办时间、期号的ｓｑｌ语法部分\r\nfunction doPrepare(){\r\n /*
+		 yangdingliang 20090702 屏蔽\r\n if (($('dto(q_aac001)').value.length==0) && \r\n ($('dto(q_aab001)').value.length==0)
+		 &&\r\n ($('dto(q_yab003_1)').value.length==0)) {\r\n \"dto(q_yab003_1)\".focus(),alert('分中心、单位编号、个人编号不能同时为空');\r\n
+		 \treturn false;\r\n }\r\n yangdingliang 20090702 屏蔽\r\n */\r\n/*\r\n \tif ($('dto(q_aae003_begin)').value.length>
+			0 &&  $('dto(q_aae003_end)').value.length > 0){\r\n\t\t $('dto(q_aae003)').value = \" to_date('\" + $('dto(q_aae003_begin)').value\r\n\t\t + \"', 'yyyy-mm-dd') and to_date('\"+ $('dto(q_aae003_end)').value + \"', 'yyyy-mm-dd')\";\r\n\t}else{\r\n\t\t$('dto(q_aae003)').value = '';\r\n\t}\r\n*/\r\n\treturn true;\t\r\n}\r\n\r\n\r\n\r\n</script>\r\n\r\n<script
+		 language=\"javascript\" type=\"text/javascript\" src=\"./query.js\"> </script>\r\n <script language=\"javascript\"
+		 type=\"text/javascript\" src=\"./singleQuery.js\"> </script>\r\n\r\n <script>if('function' == typeof fnMyMsg)fnAddOnload('fnMyMsg()');if('function' == typeof fnMyMsg1)fnAddOnload('fnMyMsg1()');</script>\r\n<OBJECT
+		 ID=\"ID\" classid=\"CLSID:AB023EFF-A5E1-4468-AA6D-37C465E05FEA\" codebase=\"/gysi2/webapp/yhsi2/insurance/card/ReadSFZCOM.CAB#version=1,0,0,0\">\r\n</OBJECT>\r\n</td>
+		</tr>
+		</table>
+	</body>
+</html>\r\n
