@@ -6,6 +6,6 @@ public class ResponseUtil<T> {
     }
 
     public static <T> Response error(){
-        return new Response(500, "success");
+        return new Response(500, "error");
     }
 }

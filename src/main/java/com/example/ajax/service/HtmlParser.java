@@ -1,4 +1,4 @@
-package com.example.ajax;
+package com.example.ajax.service;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -6,8 +6,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Service;
 
-import javax.swing.text.AbstractDocument;
 import java.io.*;
 import java.net.URL;
 import java.util.*;
@@ -18,6 +18,7 @@ import java.util.*;
  * @author chixh
  *
  */
+@Service
 public class HtmlParser {
     protected List<List<String>> data = new LinkedList<List<String>>();
 
@@ -178,66 +179,44 @@ public class HtmlParser {
 
     }
 
-    public static void main(String[] args) throws IOException {
-        String url = "http://mil.news.sina.com.cn/roll/index.d.html?cid=57918&tdsourcetag=s_pctim_aiomsg&qq-pf-to=pcqq.group";
+    public  JSONArray getJOnseParse ( String url) {
         String filename = paseHtml(url);
-        Document doc = Jsoup.parse(readHtml( filename));
-        Elements links = doc.select("a[href]"); //带有href属性的a元素
-        Elements elements = doc.select(".fixList").select(".linkNews").select("li");
-        //扩展名为.png的图片
-        Elements pngs = doc.select("img[src$=.png]");
-        Element masthead = doc.select("div.masthead").first();
-        String data = "";
-        StringBuffer sb1 = new StringBuffer();
-        for (Element e : elements) {
-            data=sb1.append(e.text()).toString();
-
-        }
-
-        Map<String, String> map = new HashMap<>();
-        map.put("data",data);
-        JSONObject jsonObject = JSONObject.fromObject(map);
-//        //3、将json对象转化为json字符串
-        String result = jsonObject.toString();
-//        System.out.println( result );
-
-
-        Document doc2 = Jsoup.parse(readHtml("./rtnerror.html"));
+        Document doc2= Jsoup.parse(readHtml( filename));
+//        Elements links = doc.select("a[href]"); //带有href属性的a元素
+//        Elements elements = doc.select(".fixList").select(".linkNews").select("li");
+//        //扩展名为.png的图片
+//        Elements pngs = doc.select("img[src$=.png]");
+//        Element masthead = doc.select("div.masthead").first();
+//        String data = "";
+//        StringBuffer sb1 = new StringBuffer();
+//        for (Element e : elements) {
+//            data=sb1.append(e.text()).toString();
+//
+//        }
+//        Document doc2 = Jsoup.parse(readHtml("./rtnerror.html"));
 //        Elements tables = doc2.select("table");
-//        System.out.println(tables.size());
         Element table = doc2.select("table").get(25);
-        StringBuffer sb = new StringBuffer();
-
-        Map<String,String> mapx=new HashMap<>();
-        String detail="";
+        Elements docs = doc2.select("table").get(25).select("th");
         List<List<String>> list = getTables(table);
-        JSONObject jsonObject1 = new JSONObject();
-        jsonObject1.put("respCode","200");
-        jsonObject1.put("respDesc","调用成功!");
+//        JSONObject jsonObject1 = new JSONObject();
+//        jsonObject1.put("respCode","200");
+//        jsonObject1.put("respDesc","调用成功!");
         JSONArray jsonArray = new JSONArray();
         for (List<String> list2 : list) {
             if(list2.size()>1&&!list2.get(0).equals(" ")){//判断是否有数据
                 JSONObject jsonObject2 = new JSONObject();
-                String[] listname = {"序号","单位编号","单位名称","个人编号","姓名","身份证号码(证件号码)","IC卡编号","险种类型","参保状态","人员状态","缴费工资","缴费基数","出生日期","参加工作日期","参保时间","个人身份","用工形式","所占编制","行政级别","技术职称","是否农民工标志","是否劳模标志","基本养老保险视同缴费年限","联系地址","邮政编码","企业内编号","联系电话"};
-                for (int i=0;i<listname.length;i++){
-                    jsonObject2.put(listname[i],list2.get(i));
+                for (int i=0;i<docs.size();i++){
+                    jsonObject2.put(docs.get(i).text(),list2.get(i));
                 }
+
                 jsonArray.add(jsonObject2);
 
-//                System.out.println(jsonObject2);
             }
 
         }
-        jsonObject1.put("data",jsonArray);
-        System.out.println(jsonObject1);
 
-        //整个转为data
-//        map1.put("data", detail);
-//        JSONObject jsonObject1 = JSONObject.fromObject( map1);
-       //3、将json对象转化为json字符串
-//       String result1 = jsonObject1.toString();
+       return jsonArray;
 
-//        System.out.println( result1);
     }
 
 
