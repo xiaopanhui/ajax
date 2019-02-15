@@ -6,7 +6,10 @@ import com.example.ajax.Response;
 import com.example.ajax.ResponseUtil;
 import com.example.ajax.service.HtmlParser;
 import com.example.ajax.service.HttpRe;
+import com.example.ajax.service.YanZhengMa;
+import com.example.ajax.service.YanZhengMa2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +22,10 @@ public class HtmCo {
     private HttpRe httpRe;
     @Autowired
     private HtmlParser htmlParser;
+    @Autowired
+    private YanZhengMa yanZhengMa;
     @PostMapping("/httpLogin")
+    //以表单登录
     public String getData(String userName,String password,String url){
 //        public String getData(@RequestBody Map map){
         JSONObject param = new JSONObject();
@@ -38,7 +44,15 @@ public class HtmCo {
     }
     @PostMapping("/parse")
     public Response  parse(String url){
+
         return  ResponseUtil.success( htmlParser.getJOnseParse(url));
 
     }
+    @GetMapping("/yangzhengma")
+    public Response  confime(String url){
+        // url = "https://www.yunaq.com/captcha/?v=0.699074000217464";
+        return  ResponseUtil.success( yanZhengMa.yanzhengma((httpRe.getImage(url))));
+
+    }
+
 }

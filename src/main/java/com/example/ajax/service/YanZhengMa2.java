@@ -1,16 +1,18 @@
 package com.example.ajax.service;
 
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 import net.sourceforge.tess4j.util.ImageHelper;
+import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
+@Service
 public class YanZhengMa2 {
     public static void main(String[] args) {
         yanzhengma();
@@ -21,9 +23,6 @@ public class YanZhengMa2 {
         String ocrResult = "";
         try{
             ITesseract instance = new Tesseract();
-            //instance.setLanguage("chi_sim");
-            //Set the tessdata pat
-            //tessdata 识别语言包
             instance.setDatapath("D:/tessdata");
             instance.setLanguage("eng");//设置语言库
             //long startTime = System.currentTimeMillis();
@@ -41,6 +40,7 @@ public class YanZhengMa2 {
         catch (IOException e){
             e.printStackTrace();
         }
+        System.out.println( " ocrResult========="+ocrResult);
         return ocrResult;
     }
 

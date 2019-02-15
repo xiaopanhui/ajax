@@ -182,17 +182,6 @@ public class HtmlParser {
     public  JSONArray getJOnseParse ( String url) {
         String filename = paseHtml(url);
         Document doc2= Jsoup.parse(readHtml( filename));
-//        Elements links = doc.select("a[href]"); //带有href属性的a元素
-//        Elements elements = doc.select(".fixList").select(".linkNews").select("li");
-//        //扩展名为.png的图片
-//        Elements pngs = doc.select("img[src$=.png]");
-//        Element masthead = doc.select("div.masthead").first();
-//        String data = "";
-//        StringBuffer sb1 = new StringBuffer();
-//        for (Element e : elements) {
-//            data=sb1.append(e.text()).toString();
-//
-//        }
 //        Document doc2 = Jsoup.parse(readHtml("./rtnerror.html"));
 //        Elements tables = doc2.select("table");
         Element table = doc2.select("table").get(25);

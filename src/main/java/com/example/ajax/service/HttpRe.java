@@ -129,6 +129,7 @@ public class HttpRe {
      */
     public static byte[] getImage(String url) {
 
+
         CloseableHttpClient client = HttpClients.createDefault();
         CloseableHttpResponse response = null;
 
@@ -173,16 +174,19 @@ public class HttpRe {
 
 
     public static void main(String[] args) throws Exception {
-        JSONObject param = new JSONObject();
-        param.put("userName", "admin");
-        param.put("password","147258");
-        Map<String, Object> headers=new HashMap<String, Object>();
-        headers.put("Content-Type", "application/json;charset=UTF-8");
-        headers.put("Accept","application/json;charset=UTF-8");
-//        "http://localhost:5005/login"
-        postForAPP("http://localhost:5005/login", param, headers);
+//        JSONObject param = new JSONObject();
+//        param.put("userName", "admin");
+//        param.put("password","147258");
+//        Map<String, Object> headers=new HashMap<String, Object>();
+//        headers.put("Content-Type", "application/json;charset=UTF-8");
+//        headers.put("Accept","application/json;charset=UTF-8");
+////        "http://localhost:5005/login"
+//        postForAPP("http://localhost:5005/login", param, headers);
 
+            //验证码的地址https://www.yunaq.com/captcha/?v=0.699074000217464https://www.yunaq.com/captcha/?v=0.699074000217464
 //        doGet();
+        String url = "https://www.yunaq.com/captcha/?v=0.699074000217464";
+        getImage(url);
     }
 
 

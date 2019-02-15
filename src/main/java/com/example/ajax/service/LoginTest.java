@@ -8,9 +8,9 @@ import java.util.Map;
 public class LoginTest {
 
     public static void main(String[] args) {
-//        System.out.println(yanzheng());
+        System.out.println(yanzheng());
 //        login();
-        yan();
+//        yan();
 
     }
 
@@ -19,6 +19,7 @@ public class LoginTest {
 
         String url = "http://www.miibeian.gov.cn/getBlacklistWebsiteVerifyCode?6";
         HttpRe httpRe = new HttpRe();
+        System.out.println( " yanZhengMa.yanzhengma(httpRe.getImage(url))=========="+yanZhengMa.yanzhengma(httpRe.getImage(url)));
         return yanZhengMa.yanzhengma(httpRe.getImage(url));
     }
 
@@ -26,7 +27,7 @@ public class LoginTest {
 
         YanZhengMa2 yanZhengMa = new YanZhengMa2();
             String a=yanZhengMa.yanzhengma();
-            System.out.println("a"+a);
+            System.out.println("a=========="+a);
         return a;
     }
 
